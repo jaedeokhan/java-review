@@ -7,6 +7,9 @@ import java.io.IOException;
 
 public class ByteExam01 {
     public static void main(String[] args) throws IOException {
+
+        long startTime = System.currentTimeMillis();
+
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
@@ -16,7 +19,6 @@ public class ByteExam01 {
 
             int readData = -1;
             while ((readData = fis.read()) != -1){
-                System.out.println(readData);
                 fos.write(readData);
             }
 
@@ -26,5 +28,8 @@ public class ByteExam01 {
             fis.close();
             fos.close();
         }
+
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime);
     }
 }
